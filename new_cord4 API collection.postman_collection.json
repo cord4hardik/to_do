@@ -1,0 +1,662 @@
+{
+	"info": {
+		"_postman_id": "7504d177-6b75-405e-bfb2-4a6cd63251ff",
+		"name": "cord4 API collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29451082"
+	},
+	"item": [
+		{
+			"name": "user register apis",
+			"item": [
+				{
+					"name": "listing all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}accounts/register-user/",
+							"host": [
+								"{{local}}accounts"
+							],
+							"path": [
+								"register-user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}accounts/register-user/2/",
+							"host": [
+								"{{local}}accounts"
+							],
+							"path": [
+								"register-user",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test@123",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}accounts/register-user/",
+							"host": [
+								"{{local}}accounts"
+							],
+							"path": [
+								"register-user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user details (partial)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Hardik",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Jethava",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "hardik_jethava",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}accounts/register-user/2/",
+							"host": [
+								"{{local}}accounts"
+							],
+							"path": [
+								"register-user",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token a5a7921190772ac7cf9e067add618a0b5354e26b",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{local}}accounts/register-user/1/",
+							"host": [
+								"{{local}}accounts"
+							],
+							"path": [
+								"register-user",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user login api",
+			"item": [
+				{
+					"name": "user login api",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "hardik",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "hardik@123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}accounts/login/",
+							"host": [
+								"{{local}}accounts"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user logout api",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "hardik_jethava",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "hardik@123",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}accounts/logout/",
+							"host": [
+								"{{local}}accounts"
+							],
+							"path": [
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "todo apis",
+			"item": [
+				{
+					"name": "listing todo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}app1/todos/",
+							"host": [
+								"{{local}}app1"
+							],
+							"path": [
+								"todos",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve todo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}app1/todos/",
+							"host": [
+								"{{local}}app1"
+							],
+							"path": [
+								"todos",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create todo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "cord4 ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "cord4 test",
+									"type": "text"
+								},
+								{
+									"key": "due_date",
+									"value": "2025-09-24",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "development testing",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "todo",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}app1/todos/",
+							"host": [
+								"{{local}}app1"
+							],
+							"path": [
+								"todos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update todo",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "cord",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "test update testing",
+									"type": "text"
+								},
+								{
+									"key": "due_date",
+									"value": "2025-09-24",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "testing",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "in_progress",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "user",
+									"value": "2",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}app1/todos/1/",
+							"host": [
+								"{{local}}app1"
+							],
+							"path": [
+								"todos",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete todo",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}app1/todos/8/",
+							"host": [
+								"{{local}}app1"
+							],
+							"path": [
+								"todos",
+								"8",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "access_logs apis",
+			"item": [
+				{
+					"name": "listing access-logs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}app1/access-logs/",
+							"host": [
+								"{{local}}app1"
+							],
+							"path": [
+								"access-logs",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve access-logs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}app1/access-logs/3/",
+							"host": [
+								"{{local}}app1"
+							],
+							"path": [
+								"access-logs",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create access-logs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "todo",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "shared_with",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "shared_by",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "read_only",
+									"value": "True",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}app1/access-logs/",
+							"host": [
+								"{{local}}app1"
+							],
+							"path": [
+								"access-logs",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update access-logs",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "todo",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "shared_with",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "shared_by",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "read_only",
+									"value": "True",
+									"type": "text"
+								},
+								{
+									"key": "changes_requested",
+									"value": "True",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}app1/access-logs/1/",
+							"host": [
+								"{{local}}app1"
+							],
+							"path": [
+								"access-logs",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update access-logs Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{local}}app1/access-logs/5/",
+							"host": [
+								"{{local}}app1"
+							],
+							"path": [
+								"access-logs",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

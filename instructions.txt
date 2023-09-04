@@ -1,0 +1,24 @@
+instructions 
+
+-> create environment and install requirements.txt
+-> set-up the project
+-> postman collection is sherd as json file and also you can see documentation of apis from this link
+   postman collection documentation : https://documenter.getpostman.com/view/22399350/2s9Y5Wwhzi
+
+
+credentials for user:
+========================================
+user_id 2
+----------------------------------------
+username = hardik_jethava
+password = hardik@123
+token = 87beb9371b89599deef4ed968669e7c6f02858d9
+
+
+
+new_creads:
+====================================================
+user_id = 1
+--------------------------------------------------
+username = hardik
+password = hardik@123
