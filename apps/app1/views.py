@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-class TodoViewSet(viewsets.ModelViewSet):
+class TodoViewSet(viewsets.ViewSet):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
@@ -64,7 +64,7 @@ class TodoViewSet(viewsets.ModelViewSet):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class AccessLogViewSet(viewsets.ModelViewSet):
+class AccessLogViewSet(viewsets.ViewSet):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
     def list(self, request):

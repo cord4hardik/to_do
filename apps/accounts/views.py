@@ -66,8 +66,14 @@ class UserLoginAPIView(APIView):
         serializer = UserLoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data["user"]
-        token, _ = Token.objects.get_or_create(user=user)
-        return Response({"message": "Login Successful", "token": token.key})
+        try:
+            token = Token.objects.get(user=user)
+            if token:
+                token.delete()
+        except Token.DoesNotExist:
+            pass
+        token = Token.objects.create(user=user)
+        return Response({"message": "Login Successful", "token": token.key}, status=status.HTTP_200_OK)
     
 # user's logout api
 class UserLogoutView(APIView):
